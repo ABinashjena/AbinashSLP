@@ -26,7 +26,7 @@ public class TestBase {
 		prop=new Properties();
 		FileInputStream fs;
 		try {
-			fs = new FileInputStream("D:\\SLP\\socioleadspro\\src\\main\\java\\com\\SLP\\qa\\config\\config.properties");	
+			fs = new FileInputStream("C:\\Users\\GLB-150\\git\\AbinashSLP\\socioleadspro\\src\\main\\java\\com\\SLP\\qa\\config\\config.properties");	
 			prop.load(fs);
          } catch (FileNotFoundException e) {
 			

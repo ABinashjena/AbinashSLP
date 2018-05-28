@@ -33,18 +33,20 @@ public class LoginPage extends TestBase{
 		{
 			return logo.isDisplayed();
 		}
-	public String validateLoginpagetitle()
+	public String validateLoginpagetitle() throws InterruptedException
 	{
+		loginbutton.click();
+		Thread.sleep(1000);
 		return driver.getTitle();
 	}
 	
-        public Dashboardpage login(String un,String pwd)
+        public facebook_Account_Modulepage login(String un,String pwd)
         {
         	loginbutton.click();
         	email.sendKeys(un);
         	password.sendKeys(pwd);
         	submit.click();
-			return new Dashboardpage();
+			return new facebook_Account_Modulepage();
                 }
 	
 	
