@@ -1,17 +1,19 @@
 package com.SLP.qa.testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.SB.qa.base.TestBase;
-import com.SLP.qa.pages.Dashboardpage;
+
 import com.SLP.qa.pages.LoginPage;
+import com.SLP.qa.pages.facebook_Account_Modulepage;
 
 public class LoginpageTest extends TestBase {
 	
 	LoginPage loginpage;
-	Dashboardpage dashboard;
+	facebook_Account_Modulepage facebook_account_modulepage;
 	public LoginpageTest()
 	{
 	super();
@@ -24,22 +26,23 @@ public class LoginpageTest extends TestBase {
 		loginpage=new LoginPage();
 	}
 	@Test(priority=1)
-	public void logoTest()
+	public void logoTest() throws InterruptedException
 	{
-		loginpage.validateLoginpagetitle();
+		String loginpagetitle = loginpage.validateLoginpagetitle();
+		Assert.assertEquals(loginpagetitle, "Please login");
 	}
 	
 	@Test(priority=2)
 	public void loginTest() throws InterruptedException
 	{
-		dashboard=loginpage.login(prop.getProperty("Emailid"),prop.getProperty("Password"));
-		Thread.sleep(10000);
+		facebook_account_modulepage=loginpage.login(prop.getProperty("Emailid"),prop.getProperty("Password"));
+
 	}
 	
 	@AfterMethod
 	public void tearDown()
 	{
-		//driver.quit();
+		driver.quit();
 	}
 	
 
