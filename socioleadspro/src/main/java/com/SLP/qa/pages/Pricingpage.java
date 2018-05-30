@@ -1,5 +1,6 @@
 package com.SLP.qa.pages;
 
+import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,7 +66,7 @@ public class Pricingpage extends TestBase {
 	@FindBy(xpath="//*[@id=\"toast-container\"]/div/div")
 	WebElement warningpoup;
 	
-	
+
 	
 	
 	//********************************************SignupForm*********************************************************//
@@ -112,6 +113,7 @@ public class Pricingpage extends TestBase {
 		l1.add(Business);
 		l1.add(Enterprise);
 		return l1;	
+		
 	}
 	
 	public String ClickonBasicpalntrynow() throws InterruptedException
