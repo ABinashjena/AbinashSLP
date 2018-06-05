@@ -102,9 +102,15 @@ public class facebook_Account_ModulepageTest extends TestBase {
     	String value = facebook_account_modulepage.ClickonAddkeywordsButton();
     	Assert.assertEquals(value, "Add keyword");
     }
-    
     @Test(priority=10)
-    public void SLP012checkUser_Added_Groups_popupTest() throws InterruptedException
+    public void SLP012ClickonViewButtonTest() throws InterruptedException
+    {
+    	facebook_account_modulepage.ClickonViewButton();
+    }
+    
+    
+    @Test(priority=11)
+    public void SLP013checkUser_Added_Groups_popupTest() throws InterruptedException
     {
     	List<String> value = facebook_account_modulepage.checkUser_Added_Groups_popup();
     	List<String> l2=new ArrayList<String>();

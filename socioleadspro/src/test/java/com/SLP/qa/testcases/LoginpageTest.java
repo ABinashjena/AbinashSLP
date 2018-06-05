@@ -25,14 +25,14 @@ public class LoginpageTest extends TestBase {
 		initilization();
 		loginpage=new LoginPage();
 	}
-	@Test(priority=1)
+	@Test(enabled=false)
 	public void logoTest() throws InterruptedException
 	{
 		String loginpagetitle = loginpage.validateLoginpagetitle();
 		Assert.assertEquals(loginpagetitle, "Please login");
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2,invocationCount=5)
 	public void loginTest() throws InterruptedException
 	{
 		facebook_account_modulepage=loginpage.login(prop.getProperty("Emailid"),prop.getProperty("Password"));
