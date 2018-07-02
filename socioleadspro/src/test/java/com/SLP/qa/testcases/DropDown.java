@@ -43,19 +43,21 @@ public class DropDown extends TestBase {
 		{
 			String value = text.getText();
 			System.out.println(value);
+			if(value.equals("India"))
+			{
+				select.selectByVisibleText(value);
+				driver.findElement(By.xpath("//div[@id='pricing_custom_Modal']/div[@role='document']//div[@class='modal-footer']/button[@type='button']")).click();
+			}
 		}
 		ArrayList<String> l1=new ArrayList<String>();
 		
 		
 
 
-//			select.selectByVisibleText(value);
-
-//		
-//		select.selectByVisibleText("India");
+//		select.selectByVisibleText(value);
 //     	select.selectByValue("IN");
 //		select.selectByIndex(1);
-//		driver.findElement(By.xpath("//div[@id='pricing_custom_Modal']/div[@role='document']//div[@class='modal-footer']/button[@type='button']")).click();
+
 		
 	}
 	@AfterMethod
