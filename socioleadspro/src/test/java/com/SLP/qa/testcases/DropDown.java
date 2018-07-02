@@ -1,5 +1,8 @@
 package com.SLP.qa.testcases;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.Action;
 
 import org.openqa.selenium.By;
@@ -35,11 +38,24 @@ public class DropDown extends TestBase {
 		driver.findElement(By.xpath("//*[@id=\"p_num\"]")).sendKeys("3759048392");
 		WebElement element1 = driver.findElement(By.xpath("/html//select[@id='CountrySelect']"));
 		Select select=new Select(element1);
-		//select.selectByVisibleText("India");
-		select.selectByValue("IN");
-		select.selectByIndex(1);
-		driver.findElement(By.xpath("//div[@id='pricing_custom_Modal']/div[@role='document']//div[@class='modal-footer']/button[@type='button']")).click();
+		List<WebElement> allvalue = select.getOptions();
+		for(WebElement text :allvalue)
+		{
+			String value = text.getText();
+			System.out.println(value);
+		}
+		ArrayList<String> l1=new ArrayList<String>();
 		
+		
+
+
+//			select.selectByVisibleText(value);
+
+//		
+//		select.selectByVisibleText("India");
+//     	select.selectByValue("IN");
+//		select.selectByIndex(1);
+//		driver.findElement(By.xpath("//div[@id='pricing_custom_Modal']/div[@role='document']//div[@class='modal-footer']/button[@type='button']")).click();
 		
 	}
 	@AfterMethod
